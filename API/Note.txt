@@ -1,0 +1,49 @@
+﻿EntityFrameworkCore
+EntityFrameworkCore.Sqlite
+EntityFrameworkCore.Design
+
+dotnet ef migrations add InitialCreate -o Data/Migrations
+
+Difference between asynchronous request and synchronous request is that 
+the thread in which synchronous request is run is blocked meaning its going
+to wait for each actions to finish before it executes.
+
+Asynchronous doesn't need to wait i.e. non blocking on the thread. It also
+help with scalability especially when querying the database with complicated 
+queries which takes time we need to make our calls asynchronous.
+
+How this works is that it make use of a delegate (i.e. passing the function to another function) to help execute 
+the task and once that is done the delegate notifies us that I am done and wait for others to complete.
+
+Architecture
+From the solution root run the command below
+dotnet new 	classlib -o Core
+dotnet new 	classlib -o Infrastructure
+
+add reference Infrastructure to the API project.
+we cd into API and run the command below
+
+dotnet add reference ../Infrastructure
+
+cd in to Infrastructure and add reference to the Core project 
+dotnet add reference ../Core/
+
+cd into the root solution which is skinet and run the code for restore
+dotnet restore
+
+Migration
+dotnet ef --startup-project .\API migrations add InitialCreate -p .\Infrastructure -o Data/Migrations  
+OR
+dotnet ef --startup-project API/ migrations add InitialCreate -p Infrastructure/ -o Data/Migrations
+
+THEN
+dotnet ef --startup-project .\API database update
+OR
+dotnet ef --startup-project .\API database update
+
+SWITCH IDE'S from code to visual studio
+
+
+dotnet tool update --global dotnet-ef
+
+
