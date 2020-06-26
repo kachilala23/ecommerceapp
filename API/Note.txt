@@ -46,4 +46,6 @@ SWITCH IDE'S from code to visual studio
 
 dotnet tool update --global dotnet-ef
 
+Part 3 V-20
+
 
