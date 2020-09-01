@@ -50,7 +50,7 @@ Part 3 V-20
 
 Get started.
 
-ef database drop -p Infrastructure/ -s API/
+dotnet ef database drop -p Infrastructure/ -s API/
 
 to drop the database
 
@@ -61,6 +61,33 @@ dotnet ef migrations remove -p Infrastructure/ -s API/
 To recreate the migration we make use of the command below
 
 dotnet ef migrations add InitialCreate -p Infrastructure/ -s API/ -o Data/Migrations
+
+Difference between FirstOrDefaultAsync() and SingleOrDefaultAsync()
+
+FirstOrDefaultAsync() will return an entity as soon as it finds it in the list
+
+SingleOrDefaultAsync() will do the same but will throw an exception if it finds more than 
+one of the same entity in the list.
+
+With eager loading we can include additional entities based on the navigational properties
+already defined within the entities by making using of the include keyword while making the request.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
