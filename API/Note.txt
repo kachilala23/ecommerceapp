@@ -50,4 +50,19 @@ Part 3 V-20
 
 Get started.
 
+ef database drop -p Infrastructure/ -s API/
+
+to drop the database
+
+To remove the last migration we run the command below
+
+dotnet ef migrations remove -p Infrastructure/ -s API/
+
+To recreate the migration we make use of the command below
+
+dotnet ef migrations add InitialCreate -p Infrastructure/ -s API/ -o Data/Migrations
+
+
+
+
 
