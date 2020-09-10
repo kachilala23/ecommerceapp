@@ -72,6 +72,34 @@ one of the same entity in the list.
 With eager loading we can include additional entities based on the navigational properties
 already defined within the entities by making using of the include keyword while making the request.
 
+Start V4 
+Generics and Specification Pattern
+
+Specification Pattern is to help with specifics as regards what we want to achieve.
+With specification pattern we can describe a query in an object we want to return.
+
+With specification pattern our methods can have meaningful name e.g. ProductWithTypesAndBrandsSpecification()
+
+
+We need to add our generic repository in startup class making use of keyword typeof so it works generically.
+
+We now need to replace the includes in the product repository class by making use of a specification pattern
+and still use our generic repository. We will create a new folder in core project and call it specifications.
+
+First we will create a generic property like the code below
+Expression<Func<T, bool>> Criteria {get; }
+
+The code above can be read as an Expression that takes a function and the function takes a type with it's return type
+in our case a boolean.
+
+Next we create a base specification to implement the ISpecification.
+The whole purpose of the specification pattern and what we have done so far is to replace the includes in 
+the product repository. That is what the AddInludeMethod will help us achieve.
+
+
+
+
+
 
 
 
