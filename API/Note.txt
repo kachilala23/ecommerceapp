@@ -96,6 +96,17 @@ Next we create a base specification to implement the ISpecification.
 The whole purpose of the specification pattern and what we have done so far is to replace the includes in 
 the product repository. That is what the AddInludeMethod will help us achieve.
 
+Next we look at the specification evaluation. This is going to live in the infrastructure project.
+
+Testing out the debugger in vs code
+we set a break point
+click the debugging tab and attach a debugger in our case .net core attach
+then run your application or get it starteed.
+if you dont have the .vscode folder just open the command pallete and serach for generate assets for build and debug
+then hit the play button to start debugging.
+
+
+
 
 
 
