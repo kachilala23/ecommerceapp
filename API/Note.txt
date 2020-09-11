@@ -105,6 +105,14 @@ then run your application or get it starteed.
 if you dont have the .vscode folder just open the command pallete and serach for generate assets for build and debug
 then hit the play button to start debugging.
 
+Add Automapper
+Automapper.Extensions.Microsoft.DependencyInjection
+
+ctr shift P 
+then type nuget add package then 
+Automapper.Extensions.Microsoft.DependencyInjection
+
+
 
 
 
